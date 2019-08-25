@@ -18,9 +18,13 @@ public class EdgeTest {
 		new Edge(null, UUID.randomUUID());
 	}
 
-
 	@Test(expected = NullPointerException.class /* no exception expected */)
 	public void creationWithSecondUUIDNullIdShouldThrowNPE() {
 		new Edge(UUID.randomUUID(), null);
+	}
+
+	@Test(expected = NullPointerException.class /* no exception expected */)
+	public void creationWithBothUUIDNullIdShouldThrowNPE() {
+		new Edge(null, null);
 	}
 }
