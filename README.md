@@ -1,2 +1,0 @@
-# graphs
-Minimalistic Graph Service
