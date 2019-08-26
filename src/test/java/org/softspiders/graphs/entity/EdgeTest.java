@@ -6,35 +6,35 @@ import java.util.UUID;
 
 import static org.junit.Assert.*;
 
+Нужен UUID для Edge !!!
+
 public class EdgeTest {
 
 	@Test
-	public void createByIdsOfTwoNodes() {
+	public void createByPairOfUUIDs() {
 		new Edge(UUID.randomUUID(), UUID.randomUUID());
 	}
 
 	@Test
-	public void creationByIdShouldSetFirstNodeId() {
-		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).nodeId1);
+	public void creationByPairOfUUIDsShouldSetCorrespondingId() {
+		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).uuid1);
+		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).uuid2);
 	}
 
 	@Test
-	public void creationByIdShouldSetSecondNodeId() {
-		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).nodeId2);
+	public void creationWithFirstUUIDNullShouldBeNormal() {
+		UUID uuid = UUID.randomUUID();
+		assertEquals(uuid, new Edge(null, uuid).uuid2);
+	}
+
+	@Test
+	public void creationWithSecondUUIDNullShouldBeNormal() {
+		UUID uuid = UUID.randomUUID();
+		assertEquals(uuid, new Edge(uuid, null).uuid1);
 	}
 
 	@Test(expected = NullPointerException.class /* no exception expected */)
-	public void creationWithFirstIdNullIdShouldThrowNPE() {
-		new Edge(null, UUID.randomUUID());
-	}
-
-	@Test(expected = NullPointerException.class /* no exception expected */)
-	public void creationWithSecondIdNullIdShouldThrowNPE() {
-		new Edge(UUID.randomUUID(), null);
-	}
-
-	@Test(expected = NullPointerException.class /* no exception expected */)
-	public void creationWithBothIdsNullIdShouldThrowNPE() {
+	public void creationWithBothUUIDsNullIdShouldThrowNPE() {
 		new Edge(null, null);
 	}
 }
