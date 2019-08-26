@@ -6,11 +6,11 @@
 
 ## Direct feature descendants
 
-[graph](https://github.com/softspider/graph-ca)
+[graph-ca](https://github.com/softspider/graph-ca)
 
 ## Direct code descendants
 
-[graph](https://github.com/softspider/graph-ca)
+[graph-ca](https://github.com/softspider/graph-ca)
 
 
 ## Test run
