@@ -1,4 +1,4 @@
-# Minimalistic Graph
+# Edges - minimalistic graph of UUIDs
 
 ## Requirements
 
