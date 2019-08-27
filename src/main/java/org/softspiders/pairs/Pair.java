@@ -1,4 +1,4 @@
-package org.softspiders.graphs.entity;
+package org.softspiders.pairs;
 
 import java.util.UUID;
 
