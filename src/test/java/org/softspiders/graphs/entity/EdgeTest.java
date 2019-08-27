@@ -8,41 +8,38 @@ import static org.junit.Assert.*;
 
 public class EdgeTest {
 
-	// Creation by two "Node" UUIDs
+	// Creation by pair of some Node UUID (NUID)
 	@Test
-	public void createByPairOfNodeUUIDs() {
+	public void createByPairOfNUIDs() {
 		new Edge(UUID.randomUUID(), UUID.randomUUID());
 	}
 
 	@Test
-	public void createByPairOfNodeUUIDsShouldSetEdgeUUID() {
-		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).uuid);
+	public void createByPairOfNUIDsShouldSetEdgeUUID() {
+		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).euid);
 	}
 
 	@Test
-	public void creationByPairOfNodeUUIDsShouldSetCorrespondingUUIDs() {
-		UUID nodeUUID1 = new Edge(UUID.randomUUID();
-		UUID nodeUUID2 = new Edge(UUID.randomUUID();
-		Edge edge = new Edge(nodeUUID1, nodeUUID2);
-		assertEquals(nodeUUID1, edge.nodeUUID1);
-		assertEquals(nodeUUID2, edge.nodeUUID2);
+	public void creationByPairOfNUIDsShouldSetCorrespondingNUIDs() {
+		UUID nuid1 = UUID.randomUUID();
+		UUID nuid2 = UUID.randomUUID();
+		Edge edge = new Edge(nuid1, nuid2);
+		assertEquals(nuid1, edge.nuid1);
+		assertEquals(nuid2, edge.nuid2);
 	}
 
-	@Test
-	public void creationWithFirstUUIDNullShouldBeNormal() {
-		Как надо ?
-		UUID uuid = UUID.randomUUID();
-		assertEquals(uuid, new Edge(null, uuid).nodeUUID2);
+	@Test(expected = NullPointerException.class)
+	public void creationWithFirstNUIDNullShouldThrowNPE() {
+		new Edge(null, UUID.randomUUID());
 	}
 
-	@Test
-	public void creationWithSecondUUIDNullShouldBeNormal() {
-		UUID uuid = UUID.randomUUID();
-		assertEquals(uuid, new Edge(uuid, null).nodeUUID1);
+	@Test(expected = NullPointerException.class)
+	public void creationWithSecondNUIDNullShouldThrowNPE() {
+		new Edge(UUID.randomUUID(), null);
 	}
 
-	@Test(expected = NullPointerException.class /* no exception expected */)
-	public void creationWithBothUUIDsNullIdShouldThrowNPE() {
+	@Test(expected = NullPointerException.class)
+	public void creationWithBothNUIDNullShouldThrowNPE() {
 		new Edge(null, null);
 	}
 }

@@ -3,16 +3,27 @@ package org.softspiders.graphs.entity;
 import java.util.UUID;
 
 public class Edge {
-	public UUID uuid;
-	public UUID nodeUUID1;
-	public UUID nodeUUID2;
+	/**
+	 * Edge UUID
+	 */
+	public UUID euid;
 
-	public Edge(UUID nodeId1, UUID nodeId2) {
-		if(nodeId1 == null && nodeId2 == null) {
+	/**
+	 * Node1 UUID
+	 */
+	public UUID nuid1;
+
+	/**
+	 * Node2 UUID
+	 */
+	public UUID nuid2;
+
+	public Edge(UUID nuid1, UUID nuid2) {
+		if(nuid1 == null || nuid2 == null) {
 			throw new NullPointerException();
 		}
-		this.uuid = UUID.randomUUID();
-		this.nodeUUID1 = nodeId1;
-		this.nodeUUID2 = nodeId2;
+		this.euid = UUID.randomUUID();
+		this.nuid1 = nuid1;
+		this.nuid2 = nuid2;
 	}
 }
