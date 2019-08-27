@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class EdgeTest {
 
+	// Creation by two "Node" UUIDs
 	@Test
 	public void createByPairOfNodeUUIDs() {
 		new Edge(UUID.randomUUID(), UUID.randomUUID());
@@ -18,15 +19,18 @@ public class EdgeTest {
 		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).uuid);
 	}
 
-
 	@Test
-	public void creationByPairOfUUIDsShouldSetCorrespondingId() {
-		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).nodeUUID1);
-		assertNotNull(new Edge(UUID.randomUUID(), UUID.randomUUID()).nodeUUID2);
+	public void creationByPairOfNodeUUIDsShouldSetCorrespondingUUIDs() {
+		UUID nodeUUID1 = new Edge(UUID.randomUUID();
+		UUID nodeUUID2 = new Edge(UUID.randomUUID();
+		Edge edge = new Edge(nodeUUID1, nodeUUID2);
+		assertEquals(nodeUUID1, edge.nodeUUID1);
+		assertEquals(nodeUUID2, edge.nodeUUID2);
 	}
 
 	@Test
 	public void creationWithFirstUUIDNullShouldBeNormal() {
+		Как надо ?
 		UUID uuid = UUID.randomUUID();
 		assertEquals(uuid, new Edge(null, uuid).nodeUUID2);
 	}
