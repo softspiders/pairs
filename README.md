@@ -4,15 +4,6 @@
 
 [JDK](https://java.com/ru/download/) >= 1.5
 
-## Direct feature descendants
-
-[graph-ca](https://github.com/softspider/graph-ca)
-
-## Direct code descendants
-
-[graph-ca](https://github.com/softspider/graph-ca)
-
-
 ## Test run
 
 ```sh
