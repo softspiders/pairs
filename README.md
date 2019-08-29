@@ -1,5 +1,7 @@
 # Pairs - сlose to minimalistic graph implementation
 
+Can connect a pair of any entities identified by UUIDs.
+
 ## Requirements
 
 [JDK](https://java.com/ru/download/) >= 1.5
